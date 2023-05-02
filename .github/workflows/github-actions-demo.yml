@@ -6,5 +6,5 @@ jobs:
     name: Build
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Hello world"
+      - run: echo "Event that triggered the job:" ${{github.event_type}}
         
