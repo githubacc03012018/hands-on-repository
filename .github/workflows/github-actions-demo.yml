@@ -5,14 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     steps:
-      - uses: actions/checkout@v3
-      - run: echo "Event that triggered the job:${{github.event_name}}"
-      
+      - name: checkout
+        run: echo "Event that triggered the job:${{github.event_name}}"
       - name: Set Time
-      - run: echo 'myTime=$(date)' >> $GITHUB_OUTPUT
-      
+        run: echo 'myTime=$(date)' >> $GITHUB_OUTPUT
       - name: Output Time
-      - run: echo "Time was ${{steps.set-time.outputs.myTime}}"
-    if: contains(github.ref, 'main')
+        run: echo "Time was ${{steps.set-time.outputs.myTime}}"
       
       
