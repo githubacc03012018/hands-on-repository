@@ -7,5 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Event that triggered the job:${{github.event_name}}"
-    if: contains(github.ref, "gf")
+    if: contains(github.ref, 'gf')
         
